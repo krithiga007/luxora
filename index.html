@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LUXORA – Curated Living, Elevated Style. A minimal luxury e-commerce boutique featuring skincare, accessories, home decor, and lifestyle essentials.">
+  <title>LUXORA — Curated Living, Elevated Style</title>
+
+  <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- A. ANNOUNCEMENT BAR -->
+  <aside class="announcement-bar" role="region" aria-label="Announcement">
+    <div class="container announcement-container">
+      <p class="announcement-text">
+        <span>Welcome to LUXORA – Discover something beautiful.</span>
+        <span class="announcement-separator">&bull;</span>
+        <span class="announcement-highlight">Complimentary delivery on orders above ₹2,000</span>
+      </p>
+    </div>
+  </aside>
+
+  <!-- B. NAVIGATION BAR -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <!-- Mobile Menu Button -->
+      <button class="nav-icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Desktop Nav Links (Left) -->
+      <nav class="nav-menu desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#shop" class="nav-link">Shop</a></li>
+          <li><a href="#categories" class="nav-link">Categories</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Brand Logo (Center) -->
+      <a href="#home" class="logo" aria-label="LUXORA Home">
+        <span class="logo-title">LUXORA</span>
+        <span class="logo-tagline">CURATED LIVING</span>
+      </a>
+
+      <!-- Nav Actions (Right) -->
+      <div class="nav-actions">
+        <!-- Search Bar Toggle / Icon -->
+        <button class="nav-icon-btn" id="navSearchBtn" aria-label="Search catalog" title="Search products">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Wishlist Icon with count badge -->
+        <button class="nav-icon-btn" id="navWishlistBtn" aria-label="View wishlist" title="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge-count" id="wishlistCountBadge" style="display: none;">0</span>
+        </button>
+
+        <!-- Shopping Cart Icon with Live Count Badge -->
+        <button class="nav-icon-btn cart-btn" id="cartToggleBtn" aria-label="Open shopping cart" aria-haspopup="dialog" title="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="badge-count" id="cartCountBadge">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <div class="mobile-nav-header">
+        <span class="mobile-nav-brand">LUXORA</span>
+        <button class="nav-icon-btn close-drawer-btn" id="closeMobileNavBtn" aria-label="Close menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="mobile-nav-links">
+        <a href="#home" class="mobile-nav-item">Home</a>
+        <a href="#shop" class="mobile-nav-item">Shop Collection</a>
+        <a href="#categories" class="mobile-nav-item">Categories</a>
+        <a href="#about" class="mobile-nav-item">About LUXORA</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <p class="mobile-nav-tagline">Curated Living. Elevated Style.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- C. HERO SECTION -->
+    <section class="hero-section" id="home" aria-label="Featured Collection">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span class="hero-badge-text">AUTUMN / WINTER CURATION</span>
+          </div>
+          <h1 class="hero-heading">
+            Find Your <span class="editorial-italic">Everyday Luxury</span>.
+          </h1>
+          <p class="hero-subtitle">
+            Thoughtfully curated essentials that make everyday living more beautiful, tactile, and serene.
+          </p>
+          <div class="hero-actions">
+            <a href="#shop" class="btn btn--primary">Explore Collection</a>
+            <a href="#about" class="btn btn--outline">The Brand Story</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <img 
+              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop" 
+              alt="Luxury aesthetic skincare and home decor styling" 
+              class="hero-img"
+              loading="eager"
+            />
+            <div class="hero-image-accent"></div>
+          </div>
+          <div class="hero-floating-card">
+            <span class="floating-label">Staff Pick</span>
+            <span class="floating-title">Glow Radiance Serum</span>
+            <span class="floating-price">₹799</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- D. SEARCH & CATEGORY FILTER SECTION -->
+    <section class="shop-section" id="shop" aria-label="Curated Shop">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header" id="categories">
+          <div class="section-heading-wrap">
+            <span class="section-tag">CATALOG</span>
+            <h2 class="section-title">The Curated Catalog</h2>
+            <p class="section-desc">Handcrafted, responsibly sourced lifestyle pieces designed to endure.</p>
+          </div>
+
+          <!-- Search Input Box -->
+          <div class="search-box-wrap">
+            <div class="search-input-inner">
+              <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input 
+                type="text" 
+                id="productSearchInput" 
+                class="search-input" 
+                placeholder="Search products by name..." 
+                autocomplete="off"
+                aria-label="Search products by name"
+              />
+              <button type="button" class="search-clear-btn" id="searchClearBtn" aria-label="Clear search text" style="display: none;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls Bar: Category Filter Pills + Sorting Dropdown -->
+        <div class="catalog-controls-bar">
+          <!-- Category Filter Pills -->
+          <div class="category-filters" role="tablist" aria-label="Filter products by category">
+            <button type="button" class="category-pill active" data-category="All" role="tab" aria-selected="true">All Products</button>
+            <button type="button" class="category-pill" data-category="Skincare" role="tab" aria-selected="false">Skincare</button>
+            <button type="button" class="category-pill" data-category="Accessories" role="tab" aria-selected="false">Accessories</button>
+            <button type="button" class="category-pill" data-category="Home Decor" role="tab" aria-selected="false">Home Decor</button>
+            <button type="button" class="category-pill" data-category="Lifestyle" role="tab" aria-selected="false">Lifestyle</button>
+          </div>
+
+          <!-- Sorting Dropdown -->
+          <div class="sort-controls">
+            <label for="sortSelect" class="sort-label">Sort by:</label>
+            <select id="sortSelect" class="sort-select" aria-label="Sort products">
+              <option value="default">Featured</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Product Count & Active Filters Indicator -->
+        <div class="results-meta-bar">
+          <span class="results-count" id="resultsCount">Showing 12 products</span>
+          <span class="wishlist-filter-indicator" id="wishlistFilterIndicator" style="display: none;">
+            Filtering by: <strong>Wishlist</strong>
+            <button type="button" class="clear-wishlist-filter" id="clearWishlistFilterBtn">&times; Clear</button>
+          </span>
+        </div>
+
+        <!-- E. DYNAMIC PRODUCT GRID -->
+        <div class="product-grid" id="productGrid" aria-live="polite">
+          <!-- Populated dynamically via renderProducts() in script.js -->
+        </div>
+
+        <!-- Empty State (When search / filter yields 0 results) -->
+        <div class="empty-state" id="emptyState" style="display: none;">
+          <div class="empty-icon-box">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
+          <h3 class="empty-title">No products found</h3>
+          <p class="empty-text">We couldn't find any items matching your current search or filter. Try a different keyword or reset filters.</p>
+          <button type="button" class="btn btn--secondary" id="resetFiltersBtn">Reset All Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRAND STORY / ABOUT SECTION -->
+    <section class="about-section" id="about" aria-label="About LUXORA">
+      <div class="container">
+        <div class="about-card">
+          <div class="about-grid">
+            <div class="about-content">
+              <span class="section-tag">PHILOSOPHY</span>
+              <h2 class="about-title">The Art of <span class="editorial-italic">Quiet Luxury</span></h2>
+              <p class="about-desc">
+                LUXORA was founded on the belief that everyday items should inspire delight. We collaborate with master artisans and sustainable creators to craft timeless pieces spanning organic botanical skincare, sculptural ceramics, minimal jewelry, and tactile accessories.
+              </p>
+              <div class="about-metrics">
+                <div class="about-metric-item">
+                  <span class="metric-num">100%</span>
+                  <span class="metric-name">Ethically Sourced</span>
+                </div>
+                <div class="about-metric-item">
+                  <span class="metric-num">Cruelty-Free</span>
+                  <span class="metric-name">Clean Formulations</span>
+                </div>
+                <div class="about-metric-item">
+                  <span class="metric-num">Handcrafted</span>
+                  <span class="metric-name">Artisan Finished</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-image-wrapper">
+              <img 
+                src="https://images.unsplash.com/photo-1608248597359-5633b49ec969?q=80&w=800&auto=format&fit=crop" 
+                alt="Minimalist design interior showcasing Luxora aesthetic" 
+                class="about-img"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <!-- Brand column -->
+        <div class="footer-brand-col">
+          <span class="footer-logo">LUXORA</span>
+          <p class="footer-tagline">Curated Living. Elevated Style.</p>
+          <p class="footer-bio">
+            A conscious luxury boutique offering elevated essentials for the discerning modern lifestyle.
+          </p>
+        </div>
+
+        <!-- Navigation column -->
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Collection</h4>
+          <ul class="footer-links">
+            <li><a href="#shop" data-filter-link="Skincare">Skincare</a></li>
+            <li><a href="#shop" data-filter-link="Accessories">Accessories</a></li>
+            <li><a href="#shop" data-filter-link="Home Decor">Home Decor</a></li>
+            <li><a href="#shop" data-filter-link="Lifestyle">Lifestyle</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Care -->
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Client Care</h4>
+          <ul class="footer-links">
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#shop">Free Delivery (Over ₹2,000)</a></li>
+            <li><a href="#home">Care Instructions</a></li>
+            <li><a href="#home">Terms & Privacy</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter column -->
+        <div class="footer-newsletter-col">
+          <h4 class="footer-heading">The Journal</h4>
+          <p class="newsletter-sub">Receive invitations to private seasonal releases and curated design notes.</p>
+          <form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Thank you for subscribing to LUXORA Journal.'); this.reset();">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address for newsletter" />
+            <button type="submit" class="newsletter-btn" aria-label="Subscribe">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 LUXORA Inc. All rights reserved. Built for Portfolio Assessment.</p>
+        <p class="footer-demo-note">* Demonstration e-commerce website. Product prices and checkout are simulated.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 5. SHOPPING CART DRAWER PANEL -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle">
+    <div class="cart-drawer" id="cartDrawer">
+      <!-- Drawer Header -->
+      <div class="cart-drawer-header">
+        <div class="cart-title-wrap">
+          <h2 class="cart-drawer-title" id="cartDrawerTitle">Shopping Bag</h2>
+          <span class="cart-items-counter" id="cartItemsCounter">(0 items)</span>
+        </div>
+        <button type="button" class="cart-close-btn" id="closeCartBtn" aria-label="Close cart drawer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Free Delivery Progress Bar -->
+      <div class="delivery-progress-wrap" id="deliveryProgressWrap">
+        <div class="delivery-progress-text" id="deliveryProgressText">
+          Add <strong>₹2,000</strong> more for <strong>FREE Delivery</strong>
+        </div>
+        <div class="delivery-progress-bar">
+          <div class="delivery-progress-fill" id="deliveryProgressFill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Drawer Items List -->
+      <div class="cart-items-list" id="cartItemsList">
+        <!-- Dynamic Cart Items Rendered Here -->
+      </div>
+
+      <!-- Empty Cart View -->
+      <div class="cart-empty-view" id="cartEmptyView" style="display: none;">
+        <div class="empty-cart-icon">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+        </div>
+        <h3 class="empty-cart-heading">Your bag is empty</h3>
+        <p class="empty-cart-text">Explore our collection of everyday luxuries and find something beautiful.</p>
+        <button type="button" class="btn btn--primary" id="startShoppingBtn">Start Shopping</button>
+      </div>
+
+      <!-- Drawer Footer with Subtotal & Actions -->
+      <div class="cart-drawer-footer" id="cartDrawerFooter">
+        <div class="cart-summary-line">
+          <span class="summary-label">Subtotal</span>
+          <span class="summary-value" id="cartSubtotalPrice">₹0</span>
+        </div>
+        <div class="cart-summary-line">
+          <span class="summary-label">Estimated Delivery</span>
+          <span class="summary-value" id="cartEstimatedDelivery">₹49</span>
+        </div>
+        <div class="cart-summary-line total-line">
+          <span class="total-label">Total Amount</span>
+          <span class="total-value" id="cartGrandTotalPrice">₹0</span>
+        </div>
+        <p class="cart-tax-notice">Taxes and packaging included. Free returns within 14 days.</p>
+        <button type="button" class="btn btn--primary btn--full btn--checkout" id="proceedCheckoutBtn">
+          <span>Proceed to Checkout</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. CHECKOUT PREVIEW MODAL -->
+  <div class="modal-overlay" id="checkoutModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle">
+    <div class="checkout-modal-card">
+      <button type="button" class="modal-close-btn" id="closeCheckoutBtn" aria-label="Close checkout preview">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Checkout Form State -->
+      <div id="checkoutFormState">
+        <div class="checkout-modal-header">
+          <span class="modal-kicker">ORDER REVIEW</span>
+          <h2 class="modal-title" id="checkoutModalTitle">Order Checkout Preview</h2>
+          <p class="modal-subtitle">Review your bag details and provide delivery information.</p>
+        </div>
+
+        <div class="checkout-modal-body">
+          <!-- Order Summary Section -->
+          <div class="checkout-order-summary">
+            <h3 class="summary-heading">
+              <span>Items in Order</span>
+              <span class="summary-pill" id="checkoutItemCount">0 items</span>
+            </h3>
+
+            <!-- Mini items scroll container -->
+            <div class="checkout-items-list" id="checkoutItemsList">
+              <!-- Rendered dynamically -->
+            </div>
+
+            <!-- Price Breakdown -->
+            <div class="checkout-breakdown">
+              <div class="breakdown-row">
+                <span>Subtotal</span>
+                <span id="checkoutSubtotal">₹0</span>
+              </div>
+              <div class="breakdown-row">
+                <span>Delivery Fee</span>
+                <span id="checkoutDelivery">₹49</span>
+              </div>
+              <div class="breakdown-row breakdown-row--total">
+                <span>Total Payable</span>
+                <span class="final-total" id="checkoutTotal">₹0</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer Delivery Form -->
+          <form class="checkout-form" id="checkoutForm" novalidate>
+            <h3 class="form-heading">Delivery Details</h3>
+
+            <div class="form-group">
+              <label for="custName" class="form-label">Full Name <span class="required">*</span></label>
+              <input type="text" id="custName" class="form-input" placeholder="e.g. Priya Sharma" required />
+              <span class="form-error" id="nameError">Please enter your full name.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="custEmail" class="form-label">Email Address <span class="required">*</span></label>
+              <input type="email" id="custEmail" class="form-input" placeholder="e.g. priya@example.com" required />
+              <span class="form-error" id="emailError">Please enter a valid email address.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="custAddress" class="form-label">Delivery Address <span class="required">*</span></label>
+              <textarea id="custAddress" class="form-input form-textarea" rows="2" placeholder="Street, Apartment, City, PIN code" required></textarea>
+              <span class="form-error" id="addressError">Please provide your complete shipping address.</span>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary btn--full" id="confirmOrderBtn">
+                <span>Confirm & Place Demonstration Order</span>
+              </button>
+              <button type="button" class="btn btn--ghost btn--full" id="cancelCheckoutBtn">
+                <span>Back to Bag</span>
+              </button>
+            </div>
+
+            <p class="checkout-security-notice">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span>Demonstration checkout. No financial transactions or card details collected.</span>
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Order Confirmation Success State (Injected upon valid submission) -->
+      <div id="checkoutSuccessState" class="checkout-success-view" style="display: none;">
+        <div class="success-icon-badge">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <span class="success-kicker">ORDER CONFIRMED</span>
+        <h2 class="success-title">Thank You for Your Order</h2>
+        <p class="success-message">
+          Your curated selection is being lovingly prepared. We have sent confirmation details to <strong id="successCustomerEmail">your email</strong>.
+        </p>
+
+        <div class="order-id-box">
+          <span class="order-id-label">Confirmation Number</span>
+          <span class="order-id-code" id="successOrderNumber">LX-849204</span>
+        </div>
+
+        <div class="success-details-summary" id="successSummaryBox">
+          <!-- Summary info injected here -->
+        </div>
+
+        <button type="button" class="btn btn--primary btn--full" id="successContinueBtn">
+          Continue Discovering
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Feedback Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Main JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
